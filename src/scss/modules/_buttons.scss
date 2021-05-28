@@ -1,0 +1,74 @@
+.btn-trigger {
+	position: relative;
+	width: 25px;
+	height: 20px;
+	
+	&.active {
+		span {
+			
+			&:nth-child(1) {
+				top: 50%;
+				transform: rotate(-225deg);
+			}
+			&:nth-child(2) {
+				transform: translateX(-25px) rotate(-445deg);
+				opacity: 0;
+			}
+			&:nth-child(3) {
+				top: 50%;
+				transform: rotate(225deg);
+				
+			}
+		}
+	}
+	span {
+		position: absolute;
+		width: 100%;
+		background: $black;
+		height: 3px;
+		border-radius: 3px;
+		box-shadow: $button-shadow;
+		transition: .3s ease-in-out;
+		&:nth-child(1) {
+			top: 10%;
+		}
+		&:nth-child(2) {
+			top: 50%;
+		}
+		&:nth-child(3) {
+			top: 90%;
+		}
+	}
+}
+
+.btn-text {
+	@include text-style(12);
+
+	&:hover {
+		
+	}
+
+	&:after {
+		content: '\f054';
+		font-family: 'font awesome 5 free';
+		font-weight: 900;
+		padding-left: 1em;
+		
+	}
+}
+
+// btn color
+.btn-black {
+	background: $black;
+	color: $white;
+	transition: .3s ease-in-out;
+	&:hover {
+		background: $blue;
+	}
+}
+
+// btn size
+.btn-245 {
+	width: 245px;
+	height: 32px;
+}

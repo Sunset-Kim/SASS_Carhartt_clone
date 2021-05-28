@@ -1,0 +1,25 @@
+.header {
+	position: relative;
+	height: 50px;
+	@include flexbox;
+
+	@include responsive(T) {
+		height: 80px;
+	}
+
+	.logo {
+		width: 100px;
+		@include responsive(T) {
+			width: 250px;
+		}
+		@include responsive(D) {
+			width: 250px;
+		}
+	}
+
+	.btn-trigger {
+		@include pos-center-y;
+		left: 15px;
+	}
+}
+
