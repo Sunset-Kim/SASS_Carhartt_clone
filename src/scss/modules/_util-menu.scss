@@ -1,7 +1,10 @@
 .util-menu {
 	position: relative;
 	height: 50px;
-	height: 200px;
+
+	&.active {
+		height: 240px;
+	}
 
 	> ul {
 		display: flex;
@@ -36,9 +39,9 @@
 			width: 275px;
 			height: calc(100% - 50px);
 			display: block;
-			border: 1px solid red;
 		}
 	}
+	// 검색바
 	.util-menu-contents.search.active {
 
 		display: flex;
@@ -78,7 +81,7 @@
 			}
 		}
 	}
-
+	// 인포테이블
 	.util-menu-contents.table.active {
 		@include flexbox;
 		flex-direction: column;
@@ -103,7 +106,7 @@
 			padding-top: 10px;
 		}
 	}
-
+	// 로그인 창
 	.util-menu-contents.login.active {
 		@include flexbox;
 		flex-direction: column;
@@ -142,6 +145,73 @@
 
 		.btn-text {
 			padding-top: 10px;
+		}
+	}
+	// 카트창
+	.util-menu-contents.cart.active {
+		display: flex;
+		flex-direction: column;
+		padding: 15px;
+		height: calc(100vh - 50px);
+		.cart-list {
+			position: relative;
+			flex: 1;
+			margin-bottom: 15px;
+
+			&-item {
+				display: flex;
+				cursor: pointer;
+
+				.img {
+					flex: 1;
+					margin-right: 10px;
+					
+					img {
+						@include fullyImg(contain);
+					}
+				}
+				.text {
+					@include text-style(13);
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					flex: 1;
+										
+					.item-title {
+						margin: 0 15px 10px 0;
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+					.item-opt {
+						margin-bottom: 10px;
+						li {
+							color: $font-gray;
+						}
+					}
+					.item-price {
+						font-weight: bold;
+					}
+				}
+				.btn-close {
+					position: absolute;
+					right: 0;
+					font-size: 18px;
+					@include transition3;
+					
+					&:hover {
+						color: $red;
+					}
+				}
+			}
+		}
+		.cart-total {
+			.cart-price {
+				@include flexbox(between);
+				margin-bottom: 15px;
+				padding-bottom: 5px;
+				border-bottom: 1px solid $black;
+			}
 		}
 	}
 

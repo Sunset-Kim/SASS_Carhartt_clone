@@ -1,0 +1,7 @@
+@mixin transition3($el:default ,$opt:ease-in-out) {
+	@if($el == default) {
+		transition: 0.3s $opt;
+	} @else {
+		transition: $el .3s $opt;
+	}
+}

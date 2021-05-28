@@ -230,7 +230,7 @@
 				</li>
 				<li class="util-menu-item">
 					<span>Login</span>
-					<div class="util-menu-contents login active">
+					<div class="util-menu-contents login">
 						<form class="util-login" action="">
 							<input class="input-id" type="text" placeholder="ID(email)">
 							<input class="input-password" type="text" placeholder="PASSWORD">
@@ -248,17 +248,44 @@
 				</li>
 				<li class="util-menu-item">
 					<span>cart (0)</span>
-					<div class="util-menu-contents">
+					<div class="util-menu-contents cart">
+						<div class="cart-list">
+							<!-- 아이템이 없으면 tag가 없습니다 -->
+							<!-- 아이템이 있을 경우 -->
+							<div class="cart-list-item">
+								<!-- item 전체는 클릭하면 장바구니 페이지로 -->
+								<div class="img">
+									<img src="./src/asset/img/shop_item_01.jpg" alt="상품명01">
+								</div>
+								<div class="text">
+									<h4 class="item-title">
+										<!-- 타이틀만 클릭시 상품 상세페이지로 -->
+										<a href="#">CONVERSE CHUCK 70 HI OX HINTERLAND</a>	
+									</h4>
+									<ul class="item-opt">
+										<li>size 275</li>
+										<li>size 275</li>
+									</ul>
+									<span class="item-price">\ 147,000</span>
+								</div>
+								<button class="btn-close">
+									<i class="fas fa-times"></i>
+								</button>
+							</div>
+						</div>
 						<div class="cart-total">
-							<span>TOTAL: </span>
-							<span class="cart-total-result">
-								\0
-							</span>
+							<div class="cart-price">
+								<span>TOTAL: </span>
+								<span class="cart-total-result">
+									<!-- 계산된 값 바인드 -->
+									\ 0
+								</span>
+							</div>
+							
 						</div>
 						<a href="#none" class="btn-black btn-245">BUY NOW</a>
 					</div>
 				</li>
-				
 			</ul>
 		</div>
 		<!-- 본문메뉴 -->
