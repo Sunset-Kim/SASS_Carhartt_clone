@@ -5,6 +5,7 @@
 @import './constants/color';
 @import './constants/_typography';
 @import './constants/boxshadow';
+@import './constants/z-index';
 
 @import './global/userreset';
 @import './global/global';
@@ -15,6 +16,8 @@
 @import './mixin/textstyle';
 @import './mixin/img';
 @import './mixin/transition';
+
+@import './layout/girds';
 
 // module
 @import './modules/buttons';
