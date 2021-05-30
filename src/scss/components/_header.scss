@@ -1,13 +1,16 @@
 .header {
-	position: relative;
 	height: 50px;
-	@include flexbox;
-
+	>.container {
+		position: relative;
+		height: inherit;
+	}
+	
 	@include responsive(T) {
 		height: 80px;
 	}
 
 	.logo {
+		@include pos-center;
 		width: 100px;
 		@include responsive(T) {
 			width: 250px;
@@ -18,8 +21,56 @@
 	}
 
 	.btn-trigger {
+		
+		&.is-active {
+			left: 15px + 275px;
+		}
 		@include pos-center-y;
+		@include transition3;
+		z-index: $z-btn-trigger;
 		left: 15px;
 	}
+
+	.util-menu {
+		@include pos-center-y;
+		@include flexbox;
+		right: 15px;
+		width: 280px;
+		
+		
+		.util-menu-item {
+			> span {
+				padding: 10px;
+			}
+		}
+	}
+
+	.util-menu-contents {
+		display: none;
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding: 0 15px;
+		margin-top: 0;
+		padding: 60px 15px 30px 15px;
+		background: white;
+		border: 1px solid red;
+		z-index: -1;
+		
+		&.active {
+			width: 100%;
+			height: fit-content;
+			display: block;
+		}
+	}
+	.util-menu-contents.cart.active {
+		display: flex;
+		flex-direction: column;
+		padding-top: 50px;
+		height: fit-content;
+		max-height: calc(100vh - 50px);
+	}
+
+	
 }
 

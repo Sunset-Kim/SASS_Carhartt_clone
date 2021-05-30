@@ -1,8 +1,80 @@
 .lnb {
-	top: 0;
-	left: 0;
+
+	&.is-shown {
+		position: fixed;
+		left: 0;
+	}
+	@include transition3;
+	@include scrollhidden;
 	position: fixed;
+	top: 0;
+	left: -275px;
 	width: 275px;
 	background: $gray;
 	height: 100vh;
+	z-index: $z-lnb;
+
+
+	.util-menu {
+		> ul {
+			height: 50px;
+			background: $gray-dark;
+			padding: 0 20px;
+		}
+
+		&.active {
+			height: 240px;
+		}
+	}
+	.lnb-main {
+		margin-top: 30px;
+		padding: 0 20px;
+
+		.lnb-depth1-list > a {
+			@include text-style(16, $black);
+			font-family: $font-sub;
+			font-weight: 900;
+			line-height: 48px;
+			@include transition3;
+
+			&:hover {
+				padding-left: 10px;
+			}
+		}
+		.lnb-main-depth2 {
+			margin: 0 0 20px 0;
+			.lnb-depth2-list {
+				font-family: $font-sub;
+				font-weight: 400;
+				@include text-style(14);
+				@include transition3;
+
+				&:hover {
+					padding-left: 10px;
+				}
+			}
+			.red {
+				@include text-style(14,$red);
+			}
+		}
+	}
+	
+
+}
+
+.overlay {
+
+	&.is-shown {
+		display: block;
+	}
+
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,.6);
+	z-index: $z-overlay;
+	@include transition3;
 }

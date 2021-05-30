@@ -27,5 +27,26 @@
     }
   }
 
-  console.log(utilMenu);
+  // side bar 작동시키기
+  const sidebar = document.querySelector('.lnb');
+  const overlay = document.querySelector('.overlay');
+  const btnSidebar = document.querySelector('.btn-trigger');
+
+  btnSidebar.addEventListener('click', function () {
+    if (this.classList.contains('is-active')) {
+      this.classList.remove('is-active');
+      overlay.classList.remove('is-shown');
+      sidebar.classList.remove('is-shown');
+    } else {
+      this.classList.add('is-active');
+      overlay.classList.add('is-shown');
+      sidebar.classList.add('is-shown');
+    }
+  });
+
+  overlay.addEventListener('click', function () {
+    btnSidebar.classList.remove('is-active');
+    overlay.classList.remove('is-shown');
+    sidebar.classList.remove('is-shown');
+  });
 })();

@@ -5,3 +5,10 @@
 		transition: $el .3s $opt;
 	}
 }
+
+@mixin scrollhidden {
+	overflow: scroll;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
