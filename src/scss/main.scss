@@ -18,6 +18,7 @@
 @import './mixin/transition';
 
 @import './layout/girds';
+@import './layout/mainpage';
 
 // module
 @import './modules/buttons';
@@ -26,6 +27,8 @@
 // component
 @import './components/header';
 @import './components/lnb';
+@import './components/articles';
+@import './components/footer';
 
 
 
