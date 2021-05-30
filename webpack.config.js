@@ -28,6 +28,13 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'url-loader',
+        options: {
+          name: 'assets/[name].[ext]',
+        },
+      },
     ],
   },
   plugins: [

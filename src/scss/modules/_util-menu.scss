@@ -7,11 +7,13 @@
 	}
 	
 	.util-menu-item {
-		@include text-style-13;		
+		@include text-style-13;
+				
 
 		> span {
 			cursor: pointer;
 			padding: 10px 0;
+			text-transform: uppercase;
 
 			&:hover {
 				text-decoration: underline;

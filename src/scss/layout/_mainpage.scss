@@ -1,26 +1,29 @@
 .main {
-	margin-top: 50px;
+	margin-top: 60px;
 	@include responsive(T) {
-		margin-top: 80px;
+		margin-top: 90px;
 	}
 	&-lnb {
+		
 
 		&.is-scroll {
 			@include responsive(D) {
+				@include flexbox(start);
 				position: fixed;
-				top: 50px;
+				top: 90px;
+				text-align: left;
 			}
-			
 		}
-		top: 50px;
+		
 		@include flexbox;
+
+		@include responsive(D) {
+			@include flexbox(start);
+		}
+
 		@include text-style(13);
 		text-align: center;
 		margin-bottom: 20px;
-
-		@include responsive(T) {
-			text-align: left;
-		}
 
 		.main-lnb-item {
 			a {
