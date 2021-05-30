@@ -1,0 +1,34 @@
+// 일반적인 텍스트 + 그림
+.common-item {
+	margin-bottom: 30px;
+	.img {
+		margin-bottom: 10px;
+		img {
+			@include fullyImg;
+		}
+	}
+	.text {
+		@include text-style(14);
+		h2 {
+			@include text-style(20);
+			font-weight: bold;
+		}
+	}
+}
+
+.inner-btn-item {
+	position: relative;
+	height: 100%;
+	margin-bottom: 30px;
+	.img {
+		height: inherit;
+		img {
+			@include fullyImg;
+		}
+	}
+	.btn-inner {
+		@include pos-center;
+		top: 80%;
+
+	}
+}

@@ -6,6 +6,14 @@
 	}
 }
 
+@mixin a-hover($color:$yellow) {
+	transition: color ease-in-out .3s;
+	&:hover {
+		color: $color;
+	}
+	
+}
+
 @mixin scrollhidden {
 	overflow: scroll;
 	&::-webkit-scrollbar {
