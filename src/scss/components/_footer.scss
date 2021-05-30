@@ -1,0 +1,62 @@
+.footer {
+	@include text-style(12,$font-gray);
+	@include responsive(D) {
+		@include text-style(13,$font-gray);
+	}
+	padding: 20px 0;
+	background: $black;
+	.footer-sitemap {
+		@include text-style(12,$white);
+		@include responsive(D) {
+			@include text-style(13);
+		}
+		@include flexbox(between);
+		margin-bottom: 20px;
+
+		h4 {
+			@include text-style(14);
+			font-weight: 600;
+		}
+
+		a {
+			@include transition3;
+			&:hover {
+				color: $yellow;
+			}
+		}
+	}
+	// 공통 레이아웃
+	.footer-main,
+	.footer-left,
+	.footer-right {
+		padding: 5px 0;
+	}
+	// 개별 레이아웃
+	.footer-main {
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+
+			li {
+
+				&:last-child::after {
+					display: none;
+				}
+				&::after {
+					content: '|';
+					padding: 0 10px;
+				}
+				a {
+					color: $yellow;
+					@include transition3;
+					&:hover {
+						color: $blue;
+					}
+				}
+			}
+		}
+		
+	}
+
+	
+}
