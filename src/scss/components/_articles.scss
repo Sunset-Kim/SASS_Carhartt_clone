@@ -19,7 +19,7 @@
 .inner-btn-item {
 	position: relative;
 	height: 100%;
-	margin-bottom: 30px;
+	padding-bottom: 20px;
 	.img {
 		height: inherit;
 		img {
@@ -30,5 +30,64 @@
 		@include pos-center;
 		top: 80%;
 
+		@include responsive(T) {
+			width: 150px;
+			height: 32px;
+		}
+
+	}
+}
+
+// 갤러리 형식
+.gallery {
+	$margin-right: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	
+	&-item {
+		width: calc(50% - #{$margin-right}/2);
+
+		&:nth-child(odd) {
+			margin-right: $margin-right;
+		}
+
+		.common-item {
+			.img {
+				img {
+					@include fullyImg(height);
+					height: auto;
+				}
+			}
+			.text {
+				h2 {
+					@include text-style(16);
+					line-height: 20px;
+				}
+				&-category {
+					@include text-style(13);
+					line-height: 13px;
+				}
+			}
+		}
+	}
+}
+
+// 메인배너
+
+// 메인배너 
+.main-banner {
+	margin-bottom: 30px;
+	&-img {
+		margin-bottom: 10px;
+		img {
+			@include fullyImg;
+		}
+	}
+	&-text {
+		@include text-style(14);
+		&-title {
+			@include text-style(24);
+			font-weight: 900;
+		}
 	}
 }

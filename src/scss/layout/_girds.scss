@@ -85,7 +85,34 @@ $lg-max-container: 1200px;
 }
 
 .main-container {
-	[class^="col-"] {
-		padding: 0;
+	width: 100%;
+
+	.row {
+		display: flex;
+		flex-wrap: wrap;
 	}
+
+	[class^="col-"] {
+		padding: 0 10px;
+	}
+
+
+	@for $i from 1 through $sm-columns {
+		.col-main-sm-#{$i} {
+			width: percentage($i / $sm-columns);
+		}
+	}
+
+	@include responsive(T) {
+		@for $i from 1 through $lg-columns {
+			.col-main-md-#{$i} {
+				width: percentage($i / $lg-columns);
+			}
+		}
+	}
+
+	
+
+	
+	
 }

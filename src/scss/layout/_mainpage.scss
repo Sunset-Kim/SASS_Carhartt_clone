@@ -3,7 +3,17 @@
 	@include responsive(T) {
 		margin-top: 90px;
 	}
+	// 메인페이지 왼쪽
 	&-lnb {
+		@include flexbox;
+		@include text-style(13);
+		margin-bottom: 20px;
+		text-align: center;
+
+		@include responsive(D) {
+			text-align: left;
+			@include flexbox(start);
+		}
 		
 
 		&.is-scroll {
@@ -14,16 +24,6 @@
 				text-align: left;
 			}
 		}
-		
-		@include flexbox;
-
-		@include responsive(D) {
-			@include flexbox(start);
-		}
-
-		@include text-style(13);
-		text-align: center;
-		margin-bottom: 20px;
 
 		.main-lnb-item {
 			a {
@@ -32,151 +32,15 @@
 		}
 	}
 
+	// 메인페이지 중간
 	&-container {
-		// 메인배너 
-		.main-banner {
-			margin-bottom: 30px;
-			&-img {
-				margin-bottom: 10px;
-				img {
-					@include fullyImg;
-				}
-			}
-			&-text {
-				@include text-style(14);
-				&-title {
-					@include text-style(24);
-					font-weight: 900;
-				}
-			}
-		}
-		// 3단 메뉴
-		.main-col-3-menu {
-			display: block;
-			margin-bottom: 30px;
-			@include responsive(T) {
-				display: flex;
-			}
-
-			.col-3-item {
-				width: 100%;
-				
-				@include responsive(T) {
-					width: 33.3333%;
-					margin-right: 15px;
-
-					&:last-child {
-						margin-right: 0;
-					}
-				}
-			}
-
-			.common-item a{
-				display: flex;
-				.img {
-					flex: 1;
-					margin-right: 15px;
-				}
-				.text {
-					flex: 1;
-				}
-				@include responsive(T) {
-					display: block;
-				}
-			}
-		}
-		// 2단 메뉴
-		.main-col-2-menu {
-			// 아이템 간격
-			$margin-right: 15px;
-
-			display: block;
-			margin-bottom: 30px;
-			@include responsive(T) {
-				display: flex;
-			}
-			
-			.margin-right {
-				@include responsive(T) {
-					margin-right: $margin-right;
-				}
-			}
-
-			.col-2-item {
-				width: 100%;
-				@include responsive(T) {
-					width: 66.666%;
-				}
-			}
-
-			.col-1-item {
-				width: 100%;
-				@include responsive(T) {
-					width: 33.3333%;
-				}
-			}
-
-			&-half {
-				display: block;
-				margin-bottom: 30px;
-				@include responsive(T) {
-					display: flex;
-				}
-
-				.margin-right {
-					@include responsive(T) {
-						margin-right: $margin-right;
-					}
-				}
-
-				.col-1-item {
-					width: 100%;
-					@include responsive(T) {
-						width: 50%;
-					}
-				}
-
-				.col-2-gallery {
-					display: flex;
-					flex-wrap: wrap;
-					
-					&-item {
-						width: calc(50% - #{$margin-right}/2);
+		
 	
-						&:nth-child(odd) {
-							margin-right: $margin-right;
-						}
-	
-						.common-item {
-							.img {
-								img {
-									@include fullyImg(height);
-									height: auto;
-								}
-							}
-							.text {
-								h2 {
-									@include text-style(16);
-									line-height: 20px;
-								}
-								&-category {
-									@include text-style(13);
-									line-height: 13px;
-								}
-							}
-						}
-					}
-				}
-			}
-			
-			.btn-inner {
-				@include responsive(T) {
-					padding: 10px 30px;
-				}
-			}
-		}
+		
 		
 	}
-	
-	&-history {}
+	// 메인페이지 오른쪽
+	&-history {
+		// 현재페이지의 path를 등록해주세요
+	}
 }
