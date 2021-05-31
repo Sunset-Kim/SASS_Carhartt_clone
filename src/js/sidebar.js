@@ -29,24 +29,45 @@
 
   // side bar 작동시키기
   const sidebar = document.querySelector('.lnb');
+  const sidebarPC = document.querySelector('.lnb.pc');
   const overlay = document.querySelector('.overlay');
-  const btnSidebar = document.querySelector('.btn-trigger');
+  const btnSidebar = document.querySelectorAll('.btn-trigger');
 
-  btnSidebar.addEventListener('click', function () {
+  const btnSidebarMobile = document.querySelector('.btn-trigger.mobile');
+  const btnSidebarPC = document.querySelector('.btn-trigger.pc');
+
+  // pc
+  btnSidebarPC.addEventListener('click', function () {
+    if (this.classList.contains('is-active')) {
+      this.classList.remove('is-active');
+      sidebarPC.classList.remove('is-shown');
+      document.body.style.overflow = 'auto';
+    } else {
+      this.classList.add('is-active');
+      sidebarPC.classList.add('is-shown');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+  
+
+  btnSidebarMobile.addEventListener('click', function () {
     if (this.classList.contains('is-active')) {
       this.classList.remove('is-active');
       overlay.classList.remove('is-shown');
       sidebar.classList.remove('is-shown');
+      document.body.style.overflow = 'auto';
     } else {
       this.classList.add('is-active');
       overlay.classList.add('is-shown');
       sidebar.classList.add('is-shown');
+      document.body.style.overflow = 'hidden';
     }
   });
 
   overlay.addEventListener('click', function () {
-    btnSidebar.classList.remove('is-active');
+    btnSidebarMobile.classList.remove('is-active');
     overlay.classList.remove('is-shown');
     sidebar.classList.remove('is-shown');
+    document.body.style.overflow = 'auto';
   });
 })();
