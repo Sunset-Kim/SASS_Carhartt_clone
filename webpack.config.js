@@ -4,9 +4,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'none',
-  entry: './src/index.js',
+  entry: {
+    main: './src/index.js',
+    subpage: './src/pages/subpage.js',
+},
   output: {
-    filename: 'main.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
   devServer: {
@@ -42,9 +45,18 @@ module.exports = {
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: './css/[name].css',
+    }),
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       template: 'index.html',
+      chunks: ['main'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: './page/subpage.html',
+      template: './src/template/subpage.html',
+      chunks: ['subpage'],
     }),
   ],
 };
