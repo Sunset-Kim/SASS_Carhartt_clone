@@ -15,6 +15,17 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader",
+            options: { 
+              minimize: true,
+             }
+          }
+        ]
+      },
+      {
         test: /\.css$/,
         use: [{ loader: MiniCssExtractPlugin.loader }, 'css-loader'],
       },
@@ -26,13 +37,6 @@ module.exports = {
           options: {
             presets: ['@babel/preset-env'],
           },
-        },
-      },
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        loader: 'url-loader',
-        options: {
-          name: 'assets/[name].[ext]',
         },
       },
     ],
