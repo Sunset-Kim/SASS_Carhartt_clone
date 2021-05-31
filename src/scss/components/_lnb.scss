@@ -1,4 +1,5 @@
-.lnb {
+// 모바일용 사이드바
+.lnb.mobile {
 
 	&.is-shown {
 		position: fixed;
@@ -61,7 +62,7 @@
 	
 
 }
-
+// 모바일용 오버레이
 .overlay {
 
 	&.is-shown {
@@ -77,4 +78,69 @@
 	background: rgba(0,0,0,.6);
 	z-index: $z-overlay;
 	@include transition3;
+}
+
+// pc 용 메뉴
+.lnb.pc {
+	&.is-shown {
+		display: block;
+	}
+	@include scrollhidden;
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: $gray;
+	z-index: $z-lnb-pc;
+
+	.lnb-main {
+		margin-top: 80px;
+		height: calc(100% - 80px);
+		padding-top: 8.5%;
+		text-align: center;
+
+		.lnb-main-depth1 {
+			
+		}
+
+		.lnb-depth1-list {
+			
+			> a {
+				@include text-style(24);
+				@include transition3;
+				font-weight: bold;
+				display: block;
+				margin-bottom: 5px;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+			
+
+
+			
+		}
+
+		.lnb-depth2-list {
+			margin-bottom: 10px;
+			a {
+				@include text-style(18);
+				display: block;
+
+				&:hover {
+					text-decoration: underline;
+				}
+
+			}
+			
+			&:nth-child(1) {
+				color: $red;
+			}
+
+			
+		}
+	}
 }

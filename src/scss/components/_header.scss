@@ -29,9 +29,10 @@
 
 	.logo {
 		@include pos-center;
-		width: 100px;
+		
+		width: 150px;
 		@include responsive(T) {
-			width: 250px;
+			width: 180px;
 		}
 		@include responsive(D) {
 			width: 250px;
@@ -39,6 +40,17 @@
 	}
 
 	.btn-trigger {
+
+		&.pc {
+			left: 10px;
+
+			&.is-active {
+				left: 0;
+				span {
+					background: #000;
+				}
+			}
+		}
 		
 		&.is-active {
 			left: 275px;
