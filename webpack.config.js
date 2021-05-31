@@ -7,7 +7,7 @@ module.exports = {
   entry: {
     main: './src/index.js',
     subpage: './src/pages/subpage.js',
-},
+  },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
@@ -21,12 +21,12 @@ module.exports = {
         test: /\.html$/,
         use: [
           {
-            loader: "html-loader",
-            options: { 
+            loader: 'html-loader',
+            options: {
               minimize: true,
-             }
-          }
-        ]
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,

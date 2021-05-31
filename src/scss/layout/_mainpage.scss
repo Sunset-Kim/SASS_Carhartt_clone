@@ -35,7 +35,23 @@
 	// 메인페이지 중간
 	&-container {
 		
-	
+		.common-item.flex {
+			a {
+				display: flex;
+				.img {
+					flex: 1;
+					margin-right: 15px;
+				}
+				.text {
+					flex: 1;
+				}
+				@include responsive(T) {
+					display: block;
+				}
+			}
+			
+			
+		}
 		
 		
 	}

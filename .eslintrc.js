@@ -9,7 +9,7 @@ module.exports = {
     sourceType: 'module',
   },
 
-  extends: ['eslint:recommended', 'eslint-config-prettier'],
+  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
   plugins: ['prettier'],
   rules: {
     'prettier/prettier': [
