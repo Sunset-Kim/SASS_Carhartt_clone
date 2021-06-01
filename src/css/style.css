@@ -104,7 +104,8 @@ a {
   margin: 0 auto; }
   .container .row {
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    margin: 0 -10px; }
   .container [class^="col-"] {
     padding: 0 10px; }
   .container .col-sm-1 {
@@ -146,7 +147,7 @@ a {
   @media screen and (min-width: 1024px) {
     .container {
       max-width: 1200px;
-      padding: 0; }
+      padding: 0 30px; }
       .container .col-lg-1 {
         width: 8.33333%; }
       .container .col-lg-2 {

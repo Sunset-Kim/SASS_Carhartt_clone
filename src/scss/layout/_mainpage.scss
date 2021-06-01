@@ -1,5 +1,6 @@
 .main {
 	margin-top: 60px;
+	
 	@include responsive(T) {
 		margin-top: 90px;
 	}

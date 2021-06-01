@@ -39,6 +39,7 @@ $md-margin: 30px;
 $md-max-container: 960px + $md-margin * 2;
 
 $lg-columns: 12;
+$lg-margin: 30px;
 $lg-max-container: 1200px;
 
 .container {
@@ -49,6 +50,7 @@ $lg-max-container: 1200px;
 	.row{
 			display: flex;
 			flex-wrap: wrap;
+			margin: 0 (-$gutter / 2);
 	}
 
 	[class^="col-"] {
@@ -74,7 +76,7 @@ $lg-max-container: 1200px;
 	
 	@include responsive(D) {
 		max-width: $lg-max-container;
-		padding: 0;
+		padding: 0 $lg-margin;
 
 			@for $i from 1 through $lg-columns {
 					.col-lg-#{$i} {
