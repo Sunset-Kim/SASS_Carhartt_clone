@@ -215,7 +215,8 @@ a {
       width: 100%; } }
 
 .main {
-  margin-top: 60px; }
+  margin-top: 60px;
+  min-height: 50vh; }
   @media screen and (min-width: 768px) {
     .main {
       margin-top: 90px; } }
@@ -635,7 +636,7 @@ a {
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 1;
+  z-index: 2;
   transition: 0.3s ease-in-out; }
   .overlay.is-shown {
     display: block; }
