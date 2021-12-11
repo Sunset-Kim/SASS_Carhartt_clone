@@ -36,7 +36,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass -wr src/scss/main.scss src/css/style.css",
     "build": "webpack",
-    "serve": "webpack serve"
+    "serve": "webpack serve",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "author": "",
   "license": "ISC"
